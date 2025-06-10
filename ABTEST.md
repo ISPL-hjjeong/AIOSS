@@ -3,7 +3,7 @@
 ## 🎯 Objective
 **VVC 압축 효율 및 성능 향상을 위한 Transformer 기반 in-loop filter 기술 개발 🚀**
 
-본 실험은 기존 VVC의 anchor in-loop filter 대비 Transformer 기반 필터가 실제 압축 성능(BD-BR, BD-PSNR 등)을 향상시키는지 검증하기 위한 A/B Testing입니다.
+본 실험은 기존 VVC의 anchor in-loop filter 대비 Transformer 기반 필터가 실제 압축 성능(BD-BR, BD-PSNR 등)을 향상시키는지 검증하기 위한 A/B Testing
 
 ---
 
