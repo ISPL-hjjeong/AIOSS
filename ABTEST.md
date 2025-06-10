@@ -16,18 +16,50 @@
 
 ---
 
-## ❓ 가설 (Hypothesis)
+## 🔍 기본 가설
 
-> If we replace the traditional in-loop filter with a Transformer-based in-loop filter,  
-> then the BD-BR will improve by at least 0.5% and BD-PSNR will increase across multiple resolutions.
+> **If** the traditional in-loop filter (Deblocking Filter, SAO, ALF) is replaced with a Transformer-based neural in-loop filter,  
+> **then** the coding performance will improve by reducing the BD-BR by **at least 0.5%** and increasing BD-PSNR by **more than 0.1 dB**,  
+> across multiple video resolutions and content types.
 
-- **누구를 위한 변화인가?**  
-  VVC를 사용하는 고효율 영상 압축 연구자 및 산업 사용자들
-- **무엇을 변경하는가?**  
-  기존 in-loop filter를 Transformer 기반 neural filter로 대체
-- **왜 필요한가?**  
-  더 나은 복원 품질 및 비트 절약을 통해 압축 효율을 향상시키기 위해
+---
 
+## 🧠 가설 구성 요소별 상세 설명
+
+### 🔹 1. 관찰 기반 문제점 (Observation)
+기존 VVC의 in-loop filter는 복잡한 텍스처나 고주파 영역에서 압축 손실 복원이 부족하며,  
+일반적인 공간 기반 필터링만을 수행하여 복원 품질에 한계가 있음.
+
+---
+
+### 🔹 2. 변경 요소 (Independent Variable)
+- 기존 in-loop filter 체계 (DF + SAO + ALF)를 Transformer 기반 Neural Filter로 대체
+- CTU 단위에서 Transformer가 spatial 및 frequency 정보를 동시에 처리
+
+---
+
+### 🔹 3. 기대 효과 (Expected Outcome)
+- BD-BR이 평균 **0.5% 이상 감소** (압축 효율 개선)  
+- BD-PSNR이 **0.1 dB 이상 증가** (복원 화질 개선)  
+- 특히 **텍스처가 복잡한 장면**이나 **고해상도(4K)** 시퀀스에서 더 큰 성능 향상 예상
+
+---
+
+### 🔹 4. 측정 방식 (Dependent Variable)
+- CTC 기준 클래스별 **1080p 및 4K 시퀀스**를 대상으로 실험  
+- 동일 anchor 설정에서 **in-loop filter만 변경**하여 A/B 실험  
+- 실험 결과를 **BD-BR (%)**, **BD-PSNR (dB)** 로 정량 평가
+
+---
+
+### 🔹 5. 평가 기준
+- BD-BR ≥ 0.5% 감소 AND BD-PSNR ≥ 0.1 dB 증가 → **가설 채택**  
+- 미달하거나 유의미하지 않을 경우 → **가설 보류 또는 수정 후 재실험**
+
+---
+
+## 📌 가설 요약
+> Transformer 기반 Neural In-loop Filter는 기존 VVC 필터 대비 높은 표현력과 적응성을 통해 압축 손실 복원 성능을 개선할 수 있으며, 이에 따라 BD-BR 및 BD-PSNR에서 유의미한 성능 향상이 기대된다.
 ---
 
 ## 🧪 실험 설계 (Experiment Design)
